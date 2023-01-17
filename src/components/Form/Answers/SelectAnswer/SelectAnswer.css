@@ -1,0 +1,35 @@
+.select-answer {
+}
+
+.select-answer .MuiFormLabel-root,
+.select-answer .MuiFormLabel-root.Mui-focused{
+    color: white;
+}
+
+.select-answer .MuiInputBase-root {
+    color: white;
+    font-size: 20px;
+}
+
+.select-answer .MuiAutocomplete-endAdornment button .MuiSvgIcon-root {
+    color: rgba(255, 255, 255, 0.54)
+}
+
+.select-answer fieldset {
+    -webkit-transition : border 200ms ease-out;
+    -moz-transition : border 200ms ease-out;
+    -o-transition : border 200ms ease-out;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.select-answer .MuiInputBase-root:hover fieldset {
+    border-color: white;
+}
+
+.select-answer .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: white !important;
+}
+
+.select-answer .Mui-focused {
+    border-color: white;
+}

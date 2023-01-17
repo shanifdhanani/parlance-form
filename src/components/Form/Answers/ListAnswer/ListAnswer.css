@@ -1,0 +1,44 @@
+.list-answer {
+    margin-top: -1em;
+}
+
+.list-answer .MuiCheckbox-root {
+    padding: 6px;
+    color: white;
+}
+
+.list-answer .MuiFormControlLabel-label {
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
+
+.list-answer .list-choice {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    border-radius: 5px;
+    margin-top: 1em;
+    border: 1px solid white;
+    max-width: 300px;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+}
+
+.list-answer .list-choice:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.list-choice.option-selected {
+    border: 3px solid white !important;
+}
+
+.enter-other-details {
+    max-width: 300px;
+    margin-top: 2em;
+}
+
+@media (max-width: 420px) {
+    .list-answer .list-choice {
+        max-width: 100%;
+    }
+}

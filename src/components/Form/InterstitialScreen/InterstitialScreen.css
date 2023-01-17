@@ -1,0 +1,8 @@
+.section-intro-screen .question-content p {
+    text-align: center;
+}
+
+.full-screen-question.section-intro-screen {
+    width: 800px;
+    max-width: 100vw;
+}

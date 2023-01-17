@@ -1,0 +1,82 @@
+.text-answer {
+    margin-top: -1em;
+}
+
+.text-input-answer {
+    width: 100%;
+}
+
+.text-input-answer .MuiInput-underline {
+    box-shadow: rgb(255 255 255 / 30%) 0px 1px;
+}
+
+.text-input-answer .MuiInput-underline:before {
+    border-bottom-color: white;
+    border-bottom: 0;
+}
+
+.text-input-answer .MuiInputLabel {
+    color: white;
+}
+
+.text-input-answer .MuiOutlinedInput-root {
+    margin-top: 5px;
+}
+
+.text-input-answer .MuiOutlinedInput-root,
+.text-input-answer .MuiInput-input {
+    color: white;
+}
+
+.text-input-answer .MuiOutlinedInput-input {
+    height: 0.75em;
+}
+
+.text-input-answer .MuiInputAdornment-root p {
+    margin: 0 !important;
+    color: white;
+}
+
+.text-input-answer .MuiOutlinedInput-root fieldset {
+    -webkit-transition : border 200ms ease-out;
+    -moz-transition : border 200ms ease-out;
+    -o-transition : border 200ms ease-out;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.text-input-answer .MuiOutlinedInput-root fieldset:hover,
+.text-input-answer .MuiOutlinedInput-root fieldset {
+    border-color: white !important;
+}
+
+.Mui-focused:after {
+    border-bottom: 2px solid white !important;
+}
+
+.Mui-error.Mui-focused:after {
+    border-bottom-color: #d32f2f !important;
+}
+
+.text-input-answer .MuiInput-root:before {
+    border: 0 !important;
+}
+
+.text-input-answer input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;
+}
+
+.text-input-answer .MuiInputLabel-root,
+.text-input-answer .MuiInput-input {
+    font-size: 30px;
+}
+
+.text-input-answer .MuiInputLabel-shrink {
+    font-size: revert;
+}
+
+@media (max-width: 420px) {
+    .text-input-answer .MuiInputLabel-root,
+    .text-input-answer .MuiInput-input {
+        font-size: 24px;
+    }
+}

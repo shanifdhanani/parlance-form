@@ -1,0 +1,38 @@
+.form-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+button.disabled {
+    background-color: #fff !important;
+}
+
+#progress-indicator {
+    display: flex;
+    width: fit-content;
+    border-color: #fff;
+    line-height: 1.5;
+    background-color: #fff;
+    font-weight: 700;
+    border-radius: 3px;
+    max-height: 33px;
+    font-weight: 400;
+    flex-direction: column;
+}
+
+.form-nav-progress-count {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px;
+}
+
+.form-nav-progress-bar {
+    background-color: #56a8ec;
+    height: 2px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
