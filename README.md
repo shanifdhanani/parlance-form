@@ -31,7 +31,7 @@ Follow steps at https://blog.logrocket.com/8-ways-deploy-react-app-free/
 
 ### `$ source ~/.nvm/nvm.sh`
 
-### `$ nvm install v16.0.0`
+### `$ nvm install v16.4.0`
 
 ## Gotchas
 

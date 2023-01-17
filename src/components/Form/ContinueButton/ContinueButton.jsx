@@ -1,6 +1,6 @@
 import {useEffect, useState, useRef} from "react";
-import FlatButton from "../../FlatButton/FlatButton";
 import CheckIcon from "@mui/icons-material/Check";
+import FlatButton from "../FlatButton/FlatButton";
 
 const ContinueButton = (props) => {
     return <div className={"continue-button flex-row"}>

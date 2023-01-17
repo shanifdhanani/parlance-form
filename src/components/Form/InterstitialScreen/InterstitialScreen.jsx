@@ -1,9 +1,9 @@
 import {forwardRef, useEffect, useState} from "react";
-import FlatButton from "../../FlatButton/FlatButton";
 import "./InterstitialScreen.css";
 import {SlideDirection} from "../../../utility/Forms/SlideDirection";
 import FormulaParser from "../../../utility/Forms/FormulaParser";
 import {CircularProgress} from "@mui/material";
+import FlatButton from "../FlatButton/FlatButton";
 
 const InterstitialScreen = forwardRef((props, forwardedRef) => {
     const [slideDirection, setSlideDirection] = useState(props.slideDirection);

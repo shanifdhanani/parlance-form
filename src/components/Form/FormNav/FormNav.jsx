@@ -1,9 +1,9 @@
 import "./FormNav.css"
-import FlatButton from "../../FlatButton/FlatButton";
 import HomeIcon from '@mui/icons-material/Home';
 import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import {useEffect, useState} from "react";
+import FlatButton from "../FlatButton/FlatButton";
 
 const FormNav = (props) => {
 
