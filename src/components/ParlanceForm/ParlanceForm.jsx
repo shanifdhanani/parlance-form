@@ -1,5 +1,5 @@
 import {createRef, useRef, useState, useEffect} from "react";
-import "./Form.css";
+import "./ParlanceForm.css";
 import Question from "./Question/Question";
 import FormNav from "./FormNav/FormNav";
 import AnswerValidator from "../../utility/Forms/AnswerValidator";
@@ -8,7 +8,7 @@ import InterstitialScreen from "./InterstitialScreen/InterstitialScreen";
 import {StepType} from "../../utility/Forms/StepType";
 import FormulaParser from "../../utility/Forms/FormulaParser";
 
-const Form = (props) => {
+const ParlanceForm = (props) => {
 
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
     const [previousStepNumber, setPreviousStepNumber] = useState(null);
@@ -302,7 +302,7 @@ const Form = (props) => {
     function renderTitleBar() {
         return <div className={"title-bar"}>
             {props.logoUrl
-                ? <a href={"https://goparco.com"} className={"logo"}><img src={props.logoUrl}/></a>
+                ? <a href={props.logoDestinationUrl || "#"} className={"logo"}><img src={props.logoUrl}/></a>
                 : <div></div>
             }
             {
@@ -363,9 +363,7 @@ const Form = (props) => {
                 invalidAnswerSubmitted={invalidAnswerSubmitted}
                 existingAnswerValue={getExistingAnswerValue(index)}
                 didSubmitAnswer={didSubmitAnswer}
-                onSubmit={() => {
-                    setDidSubmitAnswer(true)
-                }}
+                onSubmit={() => {setDidSubmitAnswer(true)}}
                 questionDisplayNumber={currentQuestionDisplayNumber}
                 isEndScreen={currentStepIndex >= props.steps.length}
                 endScreenPrompt={props.endScreenPrompt}
@@ -382,4 +380,4 @@ const Form = (props) => {
     </div>
 }
 
-export default Form;
+export default ParlanceForm;

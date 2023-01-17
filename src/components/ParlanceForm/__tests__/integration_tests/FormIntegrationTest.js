@@ -1,8 +1,6 @@
 import {clickOkButton, clickPrevButton, firstNameQuestionShouldBeLoaded, invalidWarningShouldBeShowing, invalidWarningShouldNotBeShowing, lastNameQuestionShouldBeLoaded, loadFormWithSubsetOfQuestions, navigateToFirstQuestion, enterValueIntoTextBox, clickNextButton} from "../../../../utility/TestUtils/FormNavigationUtils";
 import {fireEvent, render, screen, waitFor} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {Steps} from "../../../../data/steps";
-import Form from "../../Form";
 
 let user = null;
 let firstName = "John";

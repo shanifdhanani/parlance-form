@@ -1,8 +1,8 @@
 import {fireEvent, render, screen, waitFor} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {clickOkButton, invalidWarningShouldNotBeShowing, lastNameQuestionShouldBeLoaded, loadFormWithSubsetOfQuestions, enterValueIntoTextBox, clickPrevButton, clickNextButton, invalidWarningShouldBeShowing} from "../../../../../../utility/TestUtils/FormNavigationUtils";
+import {clickOkButton, invalidWarningShouldNotBeShowing, loadFormWithSubsetOfQuestions, clickPrevButton, clickNextButton, invalidWarningShouldBeShowing} from "../../../../../../utility/TestUtils/FormNavigationUtils";
 import {Steps} from "../../../../../../data/steps";
-import Form from "../../../../Form";
+import ParlanceForm from "../../../../ParlanceForm"
 
 let user = null;
 let firstName = "John";
@@ -30,20 +30,20 @@ describe("List Answer", () => {
         let questionsCopy = JSON.parse(JSON.stringify(Steps))
         let questions = questionsCopy.slice(7, 8);
         delete questions[0].defaultOption;
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         const checkbox = await screen.findByRole('checkbox', {name: "Retired"});
         expect(checkbox).not.toBeChecked();
     });
 
     it("should not show a warning when the screen is first loaded", async () => {
         let questions = Steps.slice(7, 8);
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         expect(screen.queryByRole("alert")).toBeNull();
     });
 
     it("should move on to the next question when a user selects an answer", async() => {
         let questions = Steps.slice(7, 9);
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         const checkbox = await screen.findByRole('checkbox', {name: "Retired"});
         await user.click(checkbox);
         await waitFor(() => {expect(checkbox).not.toBeInTheDocument()})
@@ -51,7 +51,7 @@ describe("List Answer", () => {
 
     it("should not move on to the next question when the screen first loads and a default answer is set", async() => {
         let questions = Steps.slice(7, 9);
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         const checkbox = await screen.findByRole('checkbox', {name: "Retired"});
         expect(checkbox).toBeInTheDocument();
         await new Promise((r) => setTimeout(r, 900));
@@ -60,7 +60,7 @@ describe("List Answer", () => {
 
     it("should not show an error when all options are deselected and it's a required field until they try to submit the answer", async () => {
         let questions = Steps.slice(7, 8);
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         const checkbox = await screen.findByRole('checkbox', {name: "Employed"});
         await waitFor(() => {expect(checkbox).toBeChecked();})
         await user.click(checkbox);
@@ -75,7 +75,7 @@ describe("List Answer", () => {
 
     it("should allow the user to submit an answer with additional details and remember that answer after navigating", async () => {
         let questions = Steps.slice(38, 40);
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         let otherCheckbox = await screen.findByRole('checkbox', {name: "Other (enter details below)"});
         let asapCheckbox = await screen.findByRole('checkbox', {name: "ASAP!"});
         await user.click(otherCheckbox);

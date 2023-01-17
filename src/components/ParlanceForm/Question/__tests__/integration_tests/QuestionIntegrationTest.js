@@ -2,7 +2,7 @@ import userEvent from "@testing-library/user-event";
 import {clickNextButton, clickOkButton, invalidWarningShouldBeShowing, invalidWarningShouldNotBeShowing, lastNameQuestionShouldBeLoaded, loadFormWithSubsetOfQuestions, enterValueIntoTextBox, clickPrevButton} from "../../../../../utility/TestUtils/FormNavigationUtils";
 import {fireEvent, render, screen} from "@testing-library/react";
 import {Steps} from "../../../../../data/steps";
-import Form from "../../../Form";
+import ParlanceForm from "../../../../ParlanceForm/ParlanceForm";
 
 let user = null;
 let firstName = "John";
@@ -108,7 +108,7 @@ describe("Invalid Warning", () => {
         let questionsCopy = JSON.parse(JSON.stringify(Steps))
         let questions = questionsCopy.slice(4, 6);
         questions[0].required = false;
-        await render(<Form steps={questions} />);
+        await render(<ParlanceForm steps={questions} />);
         await clickOkButton(user);
         await invalidWarningShouldNotBeShowing();
         await screen.findByText("Thanks!", {exact: false});

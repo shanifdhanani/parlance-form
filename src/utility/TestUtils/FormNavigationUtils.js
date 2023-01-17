@@ -1,9 +1,9 @@
 import {fireEvent, render, screen} from "@testing-library/react";
-import Form from "../../components/Form/Form";
 import {Steps} from "../../data/steps";
+import ParlanceForm from "../../components/ParlanceForm/ParlanceForm";
 
 export async function loadForm() {
-    await render(<Form steps={Steps} />)
+    await render(<ParlanceForm steps={Steps} />)
     await screen.findByText("Welcome", {exact: false})
 }
 
@@ -68,7 +68,7 @@ export async function invalidWarningShouldBeShowing() {
 }
 
 export async function loadFormWithSubsetOfQuestions(start, end, submitFunction = null) {
-    await render(<Form
+    await render(<ParlanceForm
         steps={Steps.slice(start, end)}
         submitAnswers={submitFunction}
         returnAnswersByName={true}

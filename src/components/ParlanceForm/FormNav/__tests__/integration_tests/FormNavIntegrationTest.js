@@ -1,7 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import {clickHomeButton, clickNextButton, clickOkButton, clickPrevButton, firstNameQuestionShouldBeLoaded, invalidWarningShouldNotBeShowing, lastNameQuestionShouldBeLoaded, loadForm, loadFormWithSubsetOfQuestions, enterValueIntoTextBox} from "../../../../../utility/TestUtils/FormNavigationUtils";
 import {screen, waitFor} from "@testing-library/react";
-import {Steps} from "../../../../../data/steps";
 
 let user = null;
 let firstName = "John";

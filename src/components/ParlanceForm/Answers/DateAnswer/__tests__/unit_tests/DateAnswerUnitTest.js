@@ -1,8 +1,6 @@
-import {fireEvent, render, screen, waitFor} from "@testing-library/react";
+import {screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {clickOkButton, invalidWarningShouldNotBeShowing, lastNameQuestionShouldBeLoaded, loadFormWithSubsetOfQuestions, enterValueIntoTextBox, clickPrevButton, clickNextButton, invalidWarningShouldBeShowing} from "../../../../../../utility/TestUtils/FormNavigationUtils";
-import {Steps} from "../../../../../../data/steps";
-import Form from "../../../../Form";
+import {loadFormWithSubsetOfQuestions} from "../../../../../../utility/TestUtils/FormNavigationUtils";
 
 let user = null;
 beforeEach(() => {

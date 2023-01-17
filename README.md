@@ -11,7 +11,20 @@
 - Set variables that you can re-use in later questions
 - Conditionally displaying questions based on previously provided answers
 
-# Deployment
+# License
+
+# Consulting and Custom Implementations
+
+# Developing
+
+# Theming and Customization
+
+# Publish to npm
+
+```
+npm login
+npm publish
+```
 
 ## Install instructions:
 1. Install Node Version Manager (easy node install)

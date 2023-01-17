@@ -1,0 +1,32 @@
+.date-answer .MuiFormLabel-root,
+.date-answer .MuiFormLabel-root.Mui-focused{
+    color: white;
+}
+
+.date-answer .MuiInputBase-root {
+    color: white;
+    font-size: 20px;
+}
+
+.date-answer .MuiSvgIcon-root {
+    color: rgba(255, 255, 255)
+}
+
+.date-answer fieldset {
+    -webkit-transition : border 200ms ease-out;
+    -moz-transition : border 200ms ease-out;
+    -o-transition : border 200ms ease-out;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.date-answer .MuiInputBase-root:hover fieldset {
+    border-color: white;
+}
+
+.date-answer .Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: white !important;
+}
+
+.date-answer .Mui-focused {
+    border-color: white;
+}
