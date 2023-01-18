@@ -108,11 +108,28 @@ in this repo to see an example of how to specify these options.
 
 ## Formulas
 
+ParlanceForm allows you to use Excel-style formulas to control whether a question shows up, the prompt for a question or interstitial screen, calculation of variables, and default values for text answers. Under the
+hood, it uses [Hyperformula](https://hyperformula.handsontable.com/) to process formulas. [Here](https://hyperformula.handsontable.com/guide/built-in-functions.html) is a list of the built in formulas they support. Because
+HyperFormula is extendable, you can also create your own custom functions using their [guide](https://hyperformula.handsontable.com/guide/built-in-functions.html#custom-functions).
+
+To date, ParlanceFormula provides one custom function, named `TO_CURRENCY`, to help you format numbers as US-denominated dollar amounts.
+
 ## Theming
+
+ParlanceForm heavily relies on [MUI](https://mui.com/) for its UX and UI. It supports basic theming options so you can provide your own backgrounds, images, colors, fonts, and styles. To set a theme for your form,
+you'll need to create a Theme object, similar to how the [Earthy Theme](https://github.com/shanifdhanani/parlance-form/blob/main/src/components/ParlanceForm/Themes/Earthy/EarthyTheme.js) is specified in this repository.
+Patches and code updates to expand ParlanceForm's theming capabilities are welcome.
 
 # License
 
-# Consulting and Custom Implementations
+ParlanceForm is dual-licenced under the [GPLv3](https://github.com/shanifdhanani/parlance-form/blob/main/LICENSE.gplv3.txt) license for other
+open source projects, and a [commercial license](https://github.com/shanifdhanani/parlance-form/blob/main/LICENSE.commercial.txt) for organizations
+that wish to use it in commercial projects or who do not wish to release their code as open source.
+
+For the purposes of this license, a _commercial project_ is defined to be any revenue-generating software that includes any substantial amount of ParlanceForm's code, or any derivative
+software created from ParlanceForm's code.
+
+# Consulting and custom implementations
 
 # Developing
 
