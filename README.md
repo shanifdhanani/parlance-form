@@ -1,15 +1,23 @@
-[![ParlanceForm](https://user-images.githubusercontent.com/3450292/213283532-5eb80fdc-ea52-466c-90ea-a5c355758e63.svg)](https://parlanceform.com)
 <p align="center">
-  <a href="https://parlanceform.com">parlanceform.com</a>
+    <a href="https://parlanceform.com">
+        <img src="https://user-images.githubusercontent.com/3450292/213283532-5eb80fdc-ea52-466c-90ea-a5c355758e63.svg" />
+    </a>
+    <br />
+    <a href="https://parlanceform.com">parlanceform.com</a>
 </p>
 
 ---
 
 ParlanceForm is an open source React component that lets you create dynamic forms for more personalized and conversational experiences with your users.
 
-The goal of this library is to provide a usable, out-of-the-box complete library for building smooth, custom forms with minimal additional coding. The design philosophy
-is to make it easy for developers to _specify_ the questions they want to ask, and let the form builder build all of the screens, animations, and validations required to
-collect data from your customers in a personalized, and conversational format.
+Our design philosophy was to provide a complete, out-of-the-box library for building smooth, custom forms with minimal additional coding using
+a declarative interface. As a developer, you can specify the questions you want to ask and let the form builder create all of the screens, animations, 
+and validations required to collect data from your customers. 
+
+Using some of the dynamic features (mentioned below),
+you can create a far richer and more enjoyable experience than you'd otherwise have so that your users will **want** to provide you their info.
+
+
 
 **Key Features**:
 
@@ -33,9 +41,10 @@ company used ParlanceForm to gather information from prospective customers.
 
 ## Examples
 
- -- | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+Question Type | Example Screen                                                                                                               | Example Config                                                                                                 
+--- |------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+Basic text question | ![Basic text question](https://user-images.githubusercontent.com/3450292/213285928-9563e7d4-d941-472b-abf4-3ffe11cea63a.png) | `{id: 2, type: StepType.Question, name: "First Name", prompt: "Let's get to know each other! What's your name?", answerType: "Text", required: true}` 
+Conditional selection list | ![Selection list](https://user-images.githubusercontent.com/3450292/213287577-90bcf88c-e4ca-4634-ba77-454848cf5032.png)      | `{id: 9, type: StepType.Question, name: "Agency", prompt: '=IF({Employment Status}="Employed", "Which agency do you work for?", "Which agency did you work for?")', defaultOption: "Department of Veterans Affairs (VA)", acceptableValues: GovernmentAgencies, answerType: AnswerType.Select, required: true, placeholder: "Select an agency..."}`                                                                                                                        
 
 # Getting Started
 
