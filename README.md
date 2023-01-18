@@ -1,17 +1,84 @@
-# LOGO HERE
+[![ParlanceForm](https://user-images.githubusercontent.com/3450292/213283532-5eb80fdc-ea52-466c-90ea-a5c355758e63.svg)](https://parlanceform.com)
+<p align="center">
+  <a href="https://parlanceform.com">parlanceform.com</a>
+</p>
 
-# Introduction
+---
+
+ParlanceForm is an open source React component that lets you create dynamic forms for more personalized and conversational experiences with your users.
+
+The goal of this library is to provide a usable, out-of-the-box complete library for building smooth, custom forms with minimal additional coding. The design philosophy
+is to make it easy for developers to _specify_ the questions they want to ask, and let the form builder build all of the screens, animations, and validations required to
+collect data from your customers in a personalized, and conversational format.
+
+**Key Features**:
+
+- A declarative interface that requires minimal coding (just specify details of your questions and the form will automatically adapt to display them)
+- Excel-style formulas to produce dynamic prompts, control whether a question is shown, and set variables
+- Placeholders that let you easily display the answer to a previous question in a prompt
+- Calculate and set variables that you can use in downstream formulas
+- Basic support for theming
+- One question per screen
+- Conditionally display questions based on calculated variables and a user's previous answers
+- Create dynamic and personalized prompts based on a user's previous answers
+- Built-in validation and formatting for specific data types (currencies, dates, numbers, etc)
+- Multiple different types of answers (basic text, select one among many, dates, etc)
+- Support for gathering freeform text input if a user selects an "Other" option
+- Required and optional questions
+
+## Demo
+
+See [this leadgen form](https://parco-welcome-form.web.app/) for an example of how a financial services
+company used ParlanceForm to gather information from prospective customers.
+
+## Examples
+
+ -- | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
+Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+
+# Getting Started
+
+Install the form builder from [npm](https://www.npmjs.com/package/parlance-form):
+
+`npm install parlance-form`
+
+Once installed, you can create an instance of a `ParlanceForm` component, pass in an array of `steps`
+that you'd like to use to create your form, along with a few additional configuration objects, and you'll
+be off and running. 
+
+Here's a quick example, and you can find a more complete example in the `examples`
+directory in this repository:
+
+```js
+import ParlanceForm from "parlance-form";
+import Steps from "src/data/steps";
+import EarthyTheme from "src/components/ParlanceForm/Themes/Earthy/EarthyTheme";
+
+const HomePage = (props) => {
+    function submitAnswers(answersByName, callback) {
+        console.log(answersByName);
+        // At this point, you can submit these answers to a backend API, save them to a database, stream them to Google Sheets, etc.
+    }
+    
+    return <ParlanceForm
+        steps={Steps}                           // See below for a description of how to specify your form's steps
+        theme={EarthyTheme}                     // See below for additional information on theming
+        submitAnswers={submitAnswers}
+        endScreenPrompt={"Thanks for the answers! Once you submit your answers a member of our team will be in touch"}
+        returnAnswersByName={true}              // Leave blank or set to false if you want answers returned by id instead of name
+        logoUrl={"https://static.wixstatic.com/media/283853_48e82cd1b68b4e24bea453a5d01cf02a~mv2.png"}
+        logoDestinationUrl={"https://goparco.com"}
+        filterOutCalculatedVariables={true}     // Set to false if you'd like to get a record of any intermediary variables that were calculated
+    />
+}
+```
 
 # How to use
 
-# Features
-- Question prompts that can contain simple placeholders or more complicated, Excel-style formulas, that dynamically display data
-- Question validation
-- Conditional question prompts based on previously set answers
-- Several different types of answers
-- Required and optional questions
-- Set variables that you can re-use in later questions
-- Conditionally displaying questions based on previously provided answers
+## Defining your steps
+
+## Theming
 
 # License
 
