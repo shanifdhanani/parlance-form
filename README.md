@@ -126,9 +126,6 @@ ParlanceForm is dual-licenced under the [GPLv3](https://github.com/shanifdhanani
 open source projects, and a [commercial license](https://github.com/shanifdhanani/parlance-form/blob/main/LICENSE.commercial.txt) for organizations
 that wish to use it in commercial projects or who do not wish to release their code as open source.
 
-For the purposes of this license, a _commercial project_ is defined to be any revenue-generating software that includes any substantial amount of ParlanceForm's code, or any derivative
-software created from ParlanceForm's code.
-
 # Consulting and custom implementations
 
 The [developer of ParlanceForm](https://linkedin.com/in/shanifdhanani) is available for consulting and freelance work. If you'd like to expand ParlanceForm, create a custom implementation,
