@@ -1,3 +1,5 @@
+# LOGO HERE
+
 # Introduction
 
 # How to use
@@ -16,6 +18,11 @@
 # Consulting and Custom Implementations
 
 # Developing
+
+## Testing
+
+## Starting
+`npm run start`
 
 # Theming and Customization
 

@@ -1,6 +1,6 @@
 {
   "name": "parlance-form",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "An open-source, dynamic form builder that incorporates Excel-style formulas, conditional branching, placeholders, and other advanced features for building smooth, one-question-per-screen forms.",
   "main": "dist/index.js",
   "private": false,
@@ -26,7 +26,9 @@
     "form",
     "form builder",
     "parlance",
-    "parlance form"
+    "parlance form",
+    "typeform",
+    "jotform"
   ],
   "author": "Shanif Dhanani (shanif.dhanani@gmail.com)",
   "license": "SEE LICENSE IN LICENSE.gplv3.txt and LICENSE.commercial.txt",
