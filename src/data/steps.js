@@ -5,17 +5,16 @@
  *  - id (string or int): A unique identifier for the question
  *  - name (string): A short name for the question, useful for adding placeholders in question prompts
  *  - heading (string): Only used for section headers, the content for the section heading
- *  - prompt (string or array): This is a flexible field that can contain a static prompt for a question, or a list of conditions where the first one that matches will provide the prompt presented to the user
- *  - answerType (AnswerType): the data type for the answer, this determines how the answer UX will be displayed
+ *  - prompt (string): This is a flexible field that can contain a static prompt for a question, or a list of conditions where the first one that matches will provide the prompt presented to the user
+ *  - answerType (string): the data type for the answer, this determines how the answer UX will be displayed
  *  - acceptableValues (array): A list of acceptable values for answers that can be selected from a list of choices
  *  - buttonPrompt (text): The text to display on the button that submits the answer
  *  - required (bool): Whether or not an answer to this question is required. If missing, the default will be false.
- *  - validationFormat (ValidationFormat): For text answers, the format that must be adhered to
+ *  - validationFormat (string): For text answers, the format that must be adhered to
  *  - defaultOption (string): The name of the option that should be selected by default for List and Selection answer types
  *  - optionForAdditionalDetails (string): Available for List answers, if the user selects the provided option then they will be prompted to enter more details
  *  - defaultValue (string): The default value to show for a text input, which will be used if present and no answer has already been provided
  *  - displayConditions (string): A formula that evaluates to true or false, and if false, will not display the current question
- *  - buttonPrompt (string): The label to show on the continue button for interstitial screens
  *  - placeholder (string): The placeholder to use for a selection answer
  *  - formula (string): The formula to use when setting a variable
  *

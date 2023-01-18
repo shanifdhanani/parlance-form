@@ -17,8 +17,6 @@ and validations required to collect data from your customers.
 Using some of the dynamic features (mentioned below),
 you can create a far richer and more enjoyable experience than you'd otherwise have so that your users will **want** to provide you their info.
 
-
-
 **Key Features**:
 
 - A declarative interface that requires minimal coding (just specify details of your questions and the form will automatically adapt to display them)
@@ -44,12 +42,12 @@ company used ParlanceForm to gather information from prospective customers.
 Question Type | Example Screen                                                                                                               | Example Config                                                                                                 
 --- |------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 Section header | ![Section header](https://user-images.githubusercontent.com/3450292/213289001-8a1c8864-6f41-4aed-a7ce-fe6bbbe1fdb8.png)      | `{id: 1, type: StepType.InterstitialScreen, name: "Welcome Screen", heading: "Welcome to Parco", prompt: "We'll start by getting some basic information from you, which we'll use to create your personalized retirement report.", buttonPrompt: "Let's get started"}` 
-Basic text question | ![Basic text question](https://user-images.githubusercontent.com/3450292/213285928-9563e7d4-d941-472b-abf4-3ffe11cea63a.png) | `{id: 2, type: "Question", name: "First Name", prompt: "Let's get to know each other! What's your name?", answerType: "Text", required: true}` 
-Conditional selection list | ![Selection list](https://user-images.githubusercontent.com/3450292/213287577-90bcf88c-e4ca-4634-ba77-454848cf5032.png)      | `{id: 9, type: "Question", name: "Agency", prompt: '=IF({Employment Status}="Employed", "Which agency do you work for?", "Which agency did you work for?")', defaultOption: "Department of Veterans Affairs (VA)", acceptableValues: GovernmentAgencies, answerType: AnswerType.Select, required: true, placeholder: "Select an agency..."}`                                                                                                                        
-Date selection | ![Date selection](https://user-images.githubusercontent.com/3450292/213288369-332f651f-8464-4371-9956-67d5a7d510d2.png)      | `{id: 11, type: "Question", name: "Service Computation Date", prompt: "What is your service computation date? If you don't know, just enter the first day of the month and year that you started working for the government.", answerType: "Date", required: true}`                                                                                                                        
+Basic text question | ![Basic text question](https://user-images.githubusercontent.com/3450292/213285928-9563e7d4-d941-472b-abf4-3ffe11cea63a.png) | `{id: 2, type: StepType.Question, name: "First Name", prompt: "Let's get to know each other! What's your name?", answerType: "Text", required: true}` 
+Conditional selection list | ![Selection list](https://user-images.githubusercontent.com/3450292/213287577-90bcf88c-e4ca-4634-ba77-454848cf5032.png)      | `{id: 9, type: StepType.Question, name: "Agency", prompt: '=IF({Employment Status}="Employed", "Which agency do you work for?", "Which agency did you work for?")', defaultOption: "Department of Veterans Affairs (VA)", acceptableValues: GovernmentAgencies, answerType: AnswerType.Select, required: true, placeholder: "Select an agency..."}`                                                                                                                        
+Date selection | ![Date selection](https://user-images.githubusercontent.com/3450292/213288369-332f651f-8464-4371-9956-67d5a7d510d2.png)      | `{id: 11, type: StepType.Question, name: "Service Computation Date", prompt: "What is your service computation date? If you don't know, just enter the first day of the month and year that you started working for the government.", answerType: "Date", required: true}`                                                                                                                        
 Set variable | N/A (these calculations happen behind the scenes)                                                                            | `{id: 15, type: StepType.SetVariable, name: "MRA Date: 57+30", formula: "=EDATE({Date Of Birth}, {FERS Minimum Retirement Age} * 12)"}`                                                                                                                        
 
-# Getting Started
+# Getting started
 
 Install the form builder from [npm](https://www.npmjs.com/package/parlance-form):
 
@@ -79,16 +77,55 @@ const HomePage = (props) => {
         submitAnswers={submitAnswers}
         endScreenPrompt={"Thanks for the answers! Once you submit your answers a member of our team will be in touch"}
         returnAnswersByName={true}              // Leave blank or set to false if you want answers returned by id instead of name
-        logoUrl={"https://static.wixstatic.com/media/283853_48e82cd1b68b4e24bea453a5d01cf02a~mv2.png"}
-        logoDestinationUrl={"https://goparco.com"}
+        logoUrl={"https://yoururl.com/logo"}
+        logoDestinationUrl={"https://google.com"}
         filterOutCalculatedVariables={true}     // Set to false if you'd like to get a record of any intermediary variables that were calculated
     />
 }
 ```
 
-# How to use
+# Use cases
+
+While ParlanceForm is ideal for collecting information from leads, users, and customers, there's no shortage of use cases. Some ways to use it include:
+
+- Leadgen
+- Surveys
+- User research
+- In-app questionnaires
+- User onboarding
+
+# How to use it in your own app
 
 ## Defining your steps
+
+ParlanceForm assumes it will be provided with an array of objects (a.k.a. hashmaps or dictionaries) that each define a step in your form.
+Currently, there are three different _types_ of steps supported:
+
+1. Interstitial screens (useful for section headers and providing information)
+2. Questions (the main interface for your form)
+3. Set variable (useful for calculating something that will be used in a later step)
+
+Depending on the type of step, you'll need to provide sufficient additional configuration options for ParlanceForm to be able to create the proper
+interface for your users. The configuration options for each step are provided below, and you can also see the file named [steps.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/data/steps.js)
+in this repo to see an example of how to specify these options.
+
+- id (string or int): A unique identifier for the question, must be unique across all other IDs in the form
+- name (string): A short name for the question, useful for adding placeholders in question prompts, must be unique across all other names in the form
+- heading (string): Used as the main heading in interstitial screens
+- prompt (string): This is a flexible field that can contain a static prompt for a question, or a formula that will display a prompt to the user
+ - answerType (string): The data type for the answer, this determines how the answer UX will be displayed. See [AnswerType.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/utility/Forms/AnswerType.js) for a list of acceptable values 
+ - acceptableValues (array of strings): A list of acceptable values for answers that can be selected for answer types that require multiple values
+ - buttonPrompt (text): The text to display on a button
+ - required (bool): Whether or not an answer to a question is required. If missing, the default will be false.
+ - validationFormat (string): For text answers, the format that must be adhered to. See [ValidationFormat.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/utility/Forms/ValidationFormat.js) for a list of acceptable values
+ - defaultOption (string): The name of the option that should be selected by default for List and Selection answer types
+ - optionForAdditionalDetails (string): Available for List answers, if the user selects this option then they will be prompted to enter more details
+ - defaultValue (string): The default value to show for a text input, which will be used if present and no answer has already been provided
+ - displayConditions (string): A formula that evaluates to true or false, and if false, will not display the current question
+ - placeholder (string): The placeholder to use for a selection answer
+ - formula (string): The formula to use when setting a variable
+
+## Formulas
 
 ## Theming
 
