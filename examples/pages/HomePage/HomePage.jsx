@@ -1,7 +1,7 @@
 import './HomePage.css';
-import {Steps} from "../../data/steps";
-import {EarthyTheme} from "../../components/ParlanceForm/Themes/Earthy/EarthyTheme";
-import ParlanceForm from "../../components/ParlanceForm/ParlanceForm";
+import ParlanceForm from "../../../src/components/ParlanceForm/ParlanceForm";
+import {EarthyTheme} from "../../../src/components/ParlanceForm/Themes/Earthy/EarthyTheme";
+import {Steps} from "../../../src/data/steps";
 
 const HomePage = (props) => {
     async function submitAnswers(answersByName, callback) {

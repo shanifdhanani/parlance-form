@@ -1,9 +1,13 @@
 .idea
-build/
-./build
-public/
+.git
+.gitignore
+build
+public
 */**/__tests__
 **/__tests__/**
 */__tests__
 __tests__
-src/
+src
+.babelrc
+webpack.config.js
+.DS_Store
