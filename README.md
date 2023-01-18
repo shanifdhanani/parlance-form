@@ -106,22 +106,6 @@ Depending on the type of step, you'll need to provide sufficient additional conf
 interface for your users. The configuration options for each step are provided below, and you can also see the file named [steps.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/data/steps.js)
 in this repo to see an example of how to specify these options.
 
-- _id_ (string or int): A unique identifier for the question, must be unique across all other IDs in the form
-- _name_ (string): A short name for the question, useful for adding placeholders in question prompts, must be unique across all other names in the form
-- _heading_ (string): Used as the main heading in interstitial screens
-- _prompt_ (string): This is a flexible field that can contain a static prompt for a question, or a formula that will display a prompt to the user
- - _answerType_ (string): The data type for the answer, this determines how the answer UX will be displayed. See [AnswerType.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/utility/Forms/AnswerType.js) for a list of acceptable values 
- - _acceptableValues_ (array of strings): A list of acceptable values for answers that can be selected for answer types that require multiple values
- - _buttonPrompt_ (text): The text to display on a button
- - _required_ (bool): Whether or not an answer to a question is required. If missing, the default will be false.
- - _validationFormat_ (string): For text answers, the format that must be adhered to. See [ValidationFormat.js](https://github.com/shanifdhanani/parlance-form/blob/main/src/utility/Forms/ValidationFormat.js) for a list of acceptable values
- - _defaultOption_ (string): The name of the option that should be selected by default for List and Selection answer types
- - _optionForAdditionalDetails_ (string): Available for List answers, if the user selects this option then they will be prompted to enter more details
- - _defaultValue_ (string): The default value to show for a text input, which will be used if present and no answer has already been provided
- - _displayConditions_ (string): A formula that evaluates to true or false, and if false, will not display the current question
- - _placeholder_ (string): The placeholder to use for a selection answer
- - _formula_ (string): The formula to use when setting a variable
-
 ## Formulas
 
 ## Theming
