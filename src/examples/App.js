@@ -1,8 +1,8 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import './App.css';
-import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
-import HomePage from "./pages/HomePage/HomePage";
+import DefaultLayout from "../layouts/DefaultLayout/DefaultLayout";
+import HomePage from "../pages/HomePage/HomePage";
 
 function App() {
     return (

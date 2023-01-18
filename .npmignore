@@ -1,0 +1,9 @@
+.idea
+build/
+./build
+public/
+*/**/__tests__
+**/__tests__/**
+*/__tests__
+__tests__
+src/
