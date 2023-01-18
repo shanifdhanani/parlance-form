@@ -1,6 +1,6 @@
 {
   "name": "parlance-form",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "An open-source, dynamic form builder that incorporates Excel-style formulas, conditional branching, placeholders, and other advanced features for building smooth, one-question-per-screen forms.",
   "main": "build/index.js",
   "private": false,
@@ -9,7 +9,7 @@
     "start:react_script": "react-scripts start",
     "test": "DEBUG_PRINT_LIMIT=0 react-scripts test",
     "test:output": "DEBUG_PRINT_LIMIT=20000 react-scripts test",
-    "build": "webpack",
+    "build": "webpack && cp LICENSE.commercial.txt build && cp LICENSE.gplv3.txt build && cp README.md build",
     "build:transpile": "rm -rf dist && mkdir dist && babel src -d dist --copy-files --ignore \"src/components/ParlanceForm/__tests__/*\"",
     "prepublishOnly": "npm run build"
   },
