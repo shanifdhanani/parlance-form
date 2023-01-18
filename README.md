@@ -131,84 +131,38 @@ software created from ParlanceForm's code.
 
 # Consulting and custom implementations
 
+The [developer of ParlanceForm](https://linkedin.com/in/shanifdhanani) is available for consulting and freelance work. If you'd like to expand ParlanceForm, create a custom implementation,
+or have any work related to software, machine learning, A.I., and tech startups, please feel free to [reach out](https://www.datagrown.com/contact).
+
 # Developing
 
-## Testing
+## Getting started with development
 
-## Starting
-`npm run start`
+Contributions to ParlanceForm's codebase are welcome and appreciated! If you'd like to help grow ParlanceForm, feel free to make a pull request to this repo. To get started with developing
+ParlanceForm locally, you can pull this codebase and follow the steps below
 
-# Theming and Customization
+1. Install nvm (if you don't already have it) and use a known version of node
 
-# Publish to npm
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source ~/.bash_profile
+source ~/.nvm/nvm.sh
+nvm install v16.4.0
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
+$ nvm use v16.4.0
+```
+2. Install dependencies: `npm install`
+3. ParlanceForm heavily relies on tests using the Jest framework to ensure proper functionality. It's strongly recommended to have tests running in a watch window using the command `npm test`
+4. Start the example app: `npm run start`
+5. Visit `localhost:3001` to ensure the app has started properly
+
+## Deploying and publishing to npm
 
 ```
 npm login
 npm publish
 ```
 
-## Install instructions:
-1. Install Node Version Manager (easy node install)
-2. Login to firebase
-3. npm run build
-4. firebase deploy
+---
 
-Follow steps at https://blog.logrocket.com/8-ways-deploy-react-app-free/
-
-# How to develop
-
-1. Run with tests on to make sure your changes don't break anything: `npm run test`
-
-### `$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
-
-### `$ source ~/.bash_profile`
-
-### `$ source ~/.nvm/nvm.sh`
-
-### `$ nvm install v16.4.0`
-
-## Gotchas
-
-1. This will break with React Scripts 5, you must downgrade to 4
-
-2. Run this command to use the correct Node version:
-
- ```
-$ [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-$ nvm use v16.4.0
-```
-
-3. In the root of this directory (apteo/website) run:
-
-### `$ npm install`
-
-All the node packages will be installed. To start the app type:
-
-### `$ npm start`
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Thanks for checking out ParlanceForm. If you like it, please feel free to star it on [npm](https://www.npmjs.com/package/parlance-form).
