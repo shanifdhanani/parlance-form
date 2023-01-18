@@ -3,11 +3,10 @@
 .gitignore
 build
 public
-*/**/__tests__
-**/__tests__/**
-*/__tests__
-__tests__
 src
+__tests__
 .babelrc
 webpack.config.js
 .DS_Store
+examples
+dist

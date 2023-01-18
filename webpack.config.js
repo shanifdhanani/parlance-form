@@ -7,9 +7,10 @@ const htmlWebpackPlugin = new HtmlWebpackPlugin({
 });
 
 module.exports = {
+    mode: 'development',
     entry: path.join(__dirname, "/examples/index.js"),
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         libraryTarget: 'commonjs2'
     },
