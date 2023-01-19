@@ -40,7 +40,7 @@ const InterstitialScreen = forwardRef((props, forwardedRef) => {
             }
             else {
                 return <>
-                    Thanks for filling out the form. Create your own or learn more about how to grow with data at <b><a href="https://datagrown.com" style={{fontVariant: "small-caps"}}>DataGrown</a></b>.
+                    Thanks for filling out this form! Create your own form with <b><a href="https://parlanceform.com">ParlanceForm</a></b>.
                 </>
             }
         }
