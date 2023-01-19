@@ -131,7 +131,7 @@ that wish to use it in commercial projects or who do not wish to release their c
 The [developer of ParlanceForm](https://linkedin.com/in/shanifdhanani) is available for consulting and freelance work. If you'd like to expand ParlanceForm, create a custom implementation,
 or have any work related to software, machine learning, A.I., and tech startups, please feel free to [reach out](https://www.datagrown.com/contact).
 
-# Developing
+# Developing ParlanceForm
 
 ## Getting started with development
 
