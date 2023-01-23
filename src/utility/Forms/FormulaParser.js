@@ -74,7 +74,13 @@ class FormulaParser {
 
             // Run the calculations and get the cell content
             const hfInstance = HyperFormula.buildFromArray(interpolatedVariables, hfConfig);
-            return hfInstance.getCellValue({sheet: 0, row: interpolatedVariables.length - 1, col: 0});
+            let result = hfInstance.getCellValue({sheet: 0, row: interpolatedVariables.length - 1, col: 0});
+
+            if (typeof result === "object") {
+                return null;
+            }
+
+            return result;
         }
         catch (ex) {
             console.log("Error calculating formula " + formula);
