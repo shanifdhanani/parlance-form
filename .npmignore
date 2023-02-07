@@ -4,9 +4,10 @@
 build
 public
 src
-__tests__
+**/__tests__
 .babelrc
 webpack.config.js
 .DS_Store
 examples
 dist
+data
