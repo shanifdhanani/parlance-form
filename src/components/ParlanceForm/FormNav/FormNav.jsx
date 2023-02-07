@@ -22,6 +22,19 @@ const FormNav = (props) => {
         return null;
     }
 
+    function renderProgressIndicatorIfNeeded() {
+        if (props.hideProgress) {
+            return null;
+        }
+
+        return <div id={"progress-indicator"}>
+            <div className={"form-nav-progress-bar"} style={{width: ((currentStep) / totalSteps * 100) + "%"}}></div>
+            <div className={"form-nav-progress-count"}>
+                {currentStep} / {totalSteps}
+            </div>
+        </div>
+    }
+
     return <div className={"form-nav"} style={props.theme?.formNav}>
         <div className={"form-nav-button"}>
             <FlatButton startIcon={<HomeIcon />} variant="contained" disableElevation onClick={() => {props.navigateToScreen(0)}} sx={{padding: "5px 17px", fontSize: buttonFontSize, fontWeight: 400, borderRadius: "3px", color: props.theme?.formNav?.color || "black"}}>
@@ -50,16 +63,7 @@ const FormNav = (props) => {
                     </FlatButton>
             }
         </div>
-        {
-            props.hideProgress
-                ? null
-                : <div id={"progress-indicator"}>
-                    <div className={"form-nav-progress-bar"} style={{width: ((currentStep) / totalSteps * 100) + "%"}}></div>
-                    <div className={"form-nav-progress-count"}>
-                        {currentStep} / {totalSteps}
-                    </div>
-                </div>
-        }
+        {renderProgressIndicatorIfNeeded()}
     </div>
 }
 
