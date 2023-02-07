@@ -73,5 +73,6 @@ export async function loadFormWithSubsetOfQuestions(start, end, submitFunction =
         submitAnswers={submitFunction}
         returnAnswersByName={true}
         filterOutCalculatedVariables={true}
+        hideProgress={hideProgress}
         endScreenPrompt={"Thanks for the answers! Once you submit your answers a member of our team will be in touch"} />)
 }
