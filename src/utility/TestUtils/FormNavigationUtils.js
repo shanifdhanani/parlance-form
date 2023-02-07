@@ -67,7 +67,7 @@ export async function invalidWarningShouldBeShowing() {
     expect(invalidValueWarning).toBeInTheDocument();
 }
 
-export async function loadFormWithSubsetOfQuestions(start, end, submitFunction = null) {
+export async function loadFormWithSubsetOfQuestions(start, end, submitFunction = null, hideProgress = false) {
     await render(<ParlanceForm
         steps={Steps.slice(start, end)}
         submitAnswers={submitFunction}

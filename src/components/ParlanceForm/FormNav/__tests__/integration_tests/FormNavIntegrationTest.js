@@ -111,4 +111,10 @@ describe("Form Nav", () => {
        await user.click(prevButton);
        expect(screen.getByText("percentage", {exact: false})).toBeInTheDocument();
    });
+
+   it("shouldn't show the progress indicator if the user wants to hide it", async () => {
+        await loadFormWithSubsetOfQuestions(50, 52, null, true);
+        const progressIndicator = screen.queryByText("1 /");
+        expect(progressIndicator).toBeNull();
+   })
 });

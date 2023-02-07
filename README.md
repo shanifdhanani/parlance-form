@@ -146,7 +146,7 @@ source ~/.bash_profile
 source ~/.nvm/nvm.sh
 nvm install v16.4.0
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-$ nvm use v16.4.0
+nvm use v16.4.0
 ```
 2. Install dependencies: `npm install`
 3. ParlanceForm heavily relies on tests using the Jest framework to ensure proper functionality. It's strongly recommended to have tests running in a watch window using the command `npm test`

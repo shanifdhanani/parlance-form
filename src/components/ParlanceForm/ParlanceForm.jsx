@@ -306,7 +306,7 @@ const ParlanceForm = (props) => {
                 : <div></div>
             }
             {
-                wasFormSubmitted || props.hideProgress
+                wasFormSubmitted
                     ? null
                     : <FormNav
                         currentStepIndex={currentStepIndex}
