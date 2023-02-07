@@ -50,14 +50,15 @@ const FormNav = (props) => {
                     </FlatButton>
             }
         </div>
-        {!props.hideProgress
-            ? <div id={"progress-indicator"}>
-                <div className={"form-nav-progress-bar"} style={{width: ((currentStep) / totalSteps * 100) + "%"}}></div>
-                <div className={"form-nav-progress-count"}>
-                    {currentStep} / {totalSteps}
+        {
+            props.hideProgress
+                ? null
+                : <div id={"progress-indicator"}>
+                    <div className={"form-nav-progress-bar"} style={{width: ((currentStep) / totalSteps * 100) + "%"}}></div>
+                    <div className={"form-nav-progress-count"}>
+                        {currentStep} / {totalSteps}
+                    </div>
                 </div>
-            </div>
-            : null
         }
     </div>
 }
