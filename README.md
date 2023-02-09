@@ -77,6 +77,7 @@ const HomePage = (props) => {
         logoUrl={"https://yoururl.com/logo"}
         logoDestinationUrl={"https://google.com"}
         filterOutCalculatedVariables={true}     // Set to false if you'd like to get a record of any intermediary variables that were calculated
+        hideProgress={false}                    // Set to true if you don't want your users seeing how long the form is and how far along they are in it
     />
 }
 ```
